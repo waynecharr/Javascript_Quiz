@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Event Prevent Default Demo</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Prevent Default Demo</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <header>
         <section>
-        <div class="high-score">View High Scores</div>
-        <div class="time"></div>
-        <script src="assets/js/script.js"></script>
+            <div class="high-score">View High Scores</div>
+            <div class="time">Time: 0</div>
         </section>
     </header>
-    
-    <section class="container">
-        <div id="question-container" class="hide"></div>
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-            <button onclick="startQuiz()">Start Quiz</button>
+
+    <main>
+
+        <section class="container">
+            <div id="prompt-container">
+                <h1>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                    answers will penalize your score/time by ten seconds!</p>
+                <button onclick="startQuiz()">Start Quiz</button>
+            </div>
+
+
             <div id="quiz-container" style="display: none;">
                 <p id="question"></p>
-                <button onclick="checkAnswer(0)" id="option1"></button><br>
-                <button onclick="checkAnswer(1)" id="option2"></button><br>
-                <button onclick="checkAnswer(2)" id="option3"></button><br>
-                <button onclick="checkAnswer(3)" id="option4"></button><br>
-        </div>
-            
-        <div class="control">
-            <button id="start-button"
-        </div>
-    </section>
+                <button onclick="checkAnswer(0)" id="choice1"></button><br>
+                <button onclick="checkAnswer(1)" id="choice2"></button><br>
+                <button onclick="checkAnswer(2)" id="choice3"></button><br>
+                <button onclick="checkAnswer(3)" id="choice4"></button><br>
+            </div>
+
+            <div id="final-score" style="display: none;">
+                <h1>All done!</h1>
+                <p class="score-result"></p>
+                <p>Enter initials: </p>
+            </div>
+        </section>
+    </main>
     <script src="assets/js/script.js"></script>
 </body>
