@@ -1,6 +1,6 @@
 
 // This array sets the questions that will be used in the quiz. 
-var prompt = [
+var prompts = [
   {
     // question - is the question being asked.
     question: "Commonly used data types DO Not include:",
@@ -30,3 +30,37 @@ var prompt = [
     answer: "4. Console.log"
   }
 ];
+
+var nextQuestion = 0;
+var time = 0;
+var timeInterval;
+
+// On click, this starts the quiz.
+function startQuiz() {
+  // Takes the prompt-container element and removes it from display
+  document.getElementById("prompt-container").style.display = "none";
+  // Takes the quiz-container elemnent and adds it to the display
+  document.getElementById("quiz-container").style.display = "block";
+  // Pulls the first prompt
+  currentPrompt = 0;
+  // this is going to run a function called "pullQuestion which will display the questions."
+  pullQuestion()
+}
+
+// This function will grab the questions from the array
+function pullQuestion() {
+  // This sets a questionElement that's the ID element "question"
+  var questionElem = document.getElementById("question");
+  var choice1Elem = document.getElementById("choice1");
+  var choice2Elem = document.getElementById("choice2");
+  var choice3Elem = document.getElementById("choice3");
+  var choice4Elem = document.getElementById("choice4");
+
+  // This sets the question text to the corresponding prompts for questions and choices. 
+  var setQuestion = prompts[currentPrompt];
+  questionElem.textContent = setQuestion.question;
+  choice1Elem.textContent = setQuestion.choices[0];
+  choice2Elem.textContent = setQuestion.choices[1];
+  choice3Elem.textContent = setQuestion.choices[2];
+  choice4Elem.textContent = setQuestion.choices[3];
+}
