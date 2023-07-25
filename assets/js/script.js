@@ -1,5 +1,5 @@
 
-// This array sets the questions that will be used in the quiz. 
+// This array sets the questions that will be used in the quiz. There's also, an array inside the array. Prompts is the main ar
 var prompts = [
   {
     // question - is the question being asked.
@@ -31,9 +31,9 @@ var prompts = [
   }
 ];
 
-var nextQuestion = 0;
-var time = 0;
-var timeInterval;
+var seconds = 74;
+var stopWatch; 
+
 
 // On click, this starts the quiz.
 function startQuiz() {
@@ -42,10 +42,17 @@ function startQuiz() {
   // Takes the quiz-container elemnent and adds it to the display
   document.getElementById("quiz-container").style.display = "block";
   // Pulls the first prompt
+  stopWatch = setInterval(timer, 1000);
   currentPrompt = 0;
   // this is going to run a function called "pullQuestion which will display the questions."
   pullQuestion()
 }
+
+function timer() {
+  time = document.getElementById("timer")
+  time.textContent = "Time: " + seconds
+  seconds--;
+ }
 
 // This function will grab the questions from the array
 function pullQuestion() {
@@ -63,4 +70,41 @@ function pullQuestion() {
   choice2Elem.textContent = setQuestion.choices[1];
   choice3Elem.textContent = setQuestion.choices[2];
   choice4Elem.textContent = setQuestion.choices[3];
+}
+
+ // This runs the function for the answers, which are buttons in the index.
+function Answer(choiceIndex) {
+  // This looks to see what choice you're selecting
+  var selectedChoice = prompts[currentPrompt].choices[choiceIndex];
+  // This is looing to see what the answer is 
+  var correctAnswer = prompts[currentPrompt].answer;
+  // This is setting a variable for the check-answer ID
+  var answerEl = document.getElementById("check-answer");
+
+  // This compares the Choice with the Answer. If the answer is the same as the choice, you get Correct text, otherwise you get wrong text!
+  if (selectedChoice === correctAnswer) {
+    answerEl.textContent = "Correct!"; 
+   } else { 
+    answerEl.textContent = "Wrong!";
+    seconds -= 10;
+  }
+   
+  // This looks at the current Prompt and adds ones
+  currentPrompt++;
+  // If the current prompt number is less than the total number of prompts it runs the pullQuestion function, otherwise it pulls the endQuiz function
+  if (currentPrompt < prompts.length) {
+    pullQuestion()
+  } else {
+    endQuiz();
+  }
+}
+
+function endQuiz() {
+  // Sets the quiz-container to hidden or none
+  document.getElementById("quiz-container").style.display = "none";
+  // Sets the final score container to display 
+  document.getElementById("final-score").style.display = "block";
+  time.textContent = "Time: " + seconds;
+  clearInterval(stopWatch);
+  console.log(seconds);
 }

@@ -13,7 +13,7 @@
     <header>
         <section>
             <div class="high-score">View High Scores</div>
-            <div class="time">Time: 0</div>
+            <div class="time" id="timer">Time: 0</div>
         </section>
     </header>
 
@@ -30,10 +30,11 @@
 
             <div id="quiz-container" style="display: none;">
                 <p id="question"></p>
-                <button onclick="checkAnswer(0)" id="choice1"></button><br>
-                <button onclick="checkAnswer(1)" id="choice2"></button><br>
-                <button onclick="checkAnswer(2)" id="choice3"></button><br>
-                <button onclick="checkAnswer(3)" id="choice4"></button><br>
+                <button onclick="Answer(0)" id="choice1"></button><br>
+                <button onclick="Answer(1)" id="choice2"></button><br>
+                <button onclick="Answer(2)" id="choice3"></button><br>
+                <button onclick="Answer(3)" id="choice4"></button><br>
+                <p id="check-answer"></p>
             </div>
 
             <div id="final-score" style="display: none;">
