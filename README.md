@@ -9,3 +9,4 @@
 - "choices are displaying" - small syntax erorr caused the choices to not display properly\
 - "added the time functionality" - Katie Redford helped me with getting the time sorted out. I think I understand it now. 
 - "added the local storage log" - Logs Initials and high score. 
+- "added an endQuiz() function when timer hits 0" - added an additional caveat that ends the game when the timer hits 0 

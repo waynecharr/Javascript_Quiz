@@ -52,6 +52,11 @@ function timer() {
   time = document.getElementById("timer")
   time.textContent = "Time: " + seconds
   seconds--;
+
+  if (seconds === 0) {
+    clearInterval(stopWatch);
+    endQuiz();
+  }
  }
 
 // This function will grab the questions from the array
@@ -87,6 +92,10 @@ function Answer(choiceIndex) {
    } else { 
     answerEl.textContent = "Wrong!";
     seconds -= 10;
+  }
+
+  if (seconds === 0) {
+    endQuiz();
   }
    
   // This looks at the current Prompt and adds ones
