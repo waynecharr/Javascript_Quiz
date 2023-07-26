@@ -104,7 +104,22 @@ function endQuiz() {
   document.getElementById("quiz-container").style.display = "none";
   // Sets the final score container to display 
   document.getElementById("final-score").style.display = "block";
+  // 
   time.textContent = "Time: " + seconds;
+  // Stops the clock from going further
   clearInterval(stopWatch);
-  console.log(seconds);
+  // Brings up a new div container called "score result"
+  document.querySelector(".score-result").textContent = "Your Final Score is " + seconds + ".";
 }
+
+var submitButton = document.querySelector("#submit");
+var initialInput = document.querySelector("#initials");
+
+submitButton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  var initials = initialInput.value;
+  localStorage.setItem("highscore", initials + " - " + seconds);
+
+});
+

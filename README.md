@@ -8,3 +8,4 @@
 - "start quiz function working" the start question function is working. unfortunately the questions choices aren't displaying! Need to figure out why that's happening. 
 - "choices are displaying" - small syntax erorr caused the choices to not display properly\
 - "added the time functionality" - Katie Redford helped me with getting the time sorted out. I think I understand it now. 
+- "added the local storage log" - Logs Initials and high score. 

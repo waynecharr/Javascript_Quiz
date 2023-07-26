@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Event Prevent Default Demo</title>
+    <title>JavaScript Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -40,7 +40,14 @@
             <div id="final-score" style="display: none;">
                 <h1>All done!</h1>
                 <p class="score-result"></p>
-                <p>Enter initials: </p>
+                <div class="initials-container"></div>
+                <label for="initials">Enter initials: </label>
+                <input type="text" maxlength="3" minlength="2" id="initials"/>
+                <button id="submit">Submit</button>
+            </div>
+
+            <div id="high-score"></div>
+
             </div>
         </section>
     </main>
