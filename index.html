@@ -12,7 +12,7 @@
 <body>
     <header>
         <section>
-            <div class="high-score">View High Scores</div>
+            <button class="high-score" id="view-score">View High Scores</button>
             <div class="time" id="timer">Time: 0</div>
         </section>
     </header>
@@ -30,10 +30,10 @@
 
             <div id="quiz-container" style="display: none;">
                 <p id="question"></p>
-                <button onclick="Answer(0)" id="choice1"></button><br>
-                <button onclick="Answer(1)" id="choice2"></button><br>
-                <button onclick="Answer(2)" id="choice3"></button><br>
-                <button onclick="Answer(3)" id="choice4"></button><br>
+                <button onclick="Answer(0)" class="prompt-choice" id="choice1"></button><br>
+                <button onclick="Answer(1)" class="prompt-choice" id="choice2"></button><br>
+                <button onclick="Answer(2)" class="prompt-choice" id="choice3"></button><br>
+                <button onclick="Answer(3)" class="prompt-choice" id="choice4"></button><br>
                 <p id="check-answer"></p>
             </div>
 
@@ -48,8 +48,8 @@
 
             <div id="high-score" style="display: none;">
                 <h1>High Scores</h1>
-                <button>Back</button>
-                <button>Clear High Scores</button>
+                <ul id="score-list"></ul>
+                <button id="back">Back</button>
             </div>
 
 

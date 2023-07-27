@@ -38,13 +38,44 @@ button:hover {
     cursor: pointer;
 }
 
-.high-score {
+button.high-score {
     color: blueviolet;
     font-weight: bold;
     font-size: 20px;
     display: block;
     float: left;
+    background-color: white;
+    padding: 0%;
 } 
+
+button.high-score:hover {
+    background-color: white;
+    color: var(--lavender);
+}
+
+button.prompt-choice {
+    font-size: 26px;
+}
+
+button:hover {
+    background-color: var(--lavender);
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgrey;
+    font-size: 24px;
+}
+
+label {
+    font-size: 20px;
+}
+
 
 .time {
     font-weight: bold;

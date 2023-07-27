@@ -1,5 +1,5 @@
 
-// This array sets the questions that will be used in the quiz. There's also, an array inside the array. Prompts is the main ar
+// This array sets the questions that will be used in the quiz. There's also, an array inside the array. Prompts is the main arrray
 var prompts = [
   {
     // question - is the question being asked.
@@ -31,12 +31,24 @@ var prompts = [
   }
 ];
 
+// An empty array that will be appended as I add to the score
+var scoreArray = [];
+
+// Sets the starting seconds
 var seconds = 74;
+// Used for the interval
 var stopWatch; 
 
+// Timer was having issues reseting. Adding this reset timer function before the game begins. 
+function resetTimer() {
+  clearInterval(stopWatch);
+  seconds = 74;
+}
 
 // On click, this starts the quiz.
 function startQuiz() {
+  // Calls the resetTimer function above. 
+  resetTimer();
   // Takes the prompt-container element and removes it from display
   document.getElementById("prompt-container").style.display = "none";
   // Takes the quiz-container elemnent and adds it to the display
@@ -48,11 +60,12 @@ function startQuiz() {
   pullQuestion()
 }
 
+// This function sets the timer, and updates the text within the "timer" Id and replaces it with Time: + seconds
 function timer() {
   time = document.getElementById("timer")
   time.textContent = "Time: " + seconds
   seconds--;
-
+   // If the timer hits 0 seconds, the game will automatically end. 
   if (seconds === 0) {
     clearInterval(stopWatch);
     endQuiz();
@@ -93,10 +106,6 @@ function Answer(choiceIndex) {
     answerEl.textContent = "Wrong!";
     seconds -= 10;
   }
-
-  if (seconds === 0) {
-    endQuiz();
-  }
    
   // This looks at the current Prompt and adds ones
   currentPrompt++;
@@ -124,11 +133,48 @@ function endQuiz() {
 var submitButton = document.querySelector("#submit");
 var initialInput = document.querySelector("#initials");
 
+// switched to a EventListner instead of an onclick for the remaining buttons. Removes final-score container and displays the high-score container
 submitButton.addEventListener("click", function (event) {
-  event.preventDefault();
+  document.getElementById("final-score").style.display = "none";
+  document.getElementById("high-score").style.display = "block";
 
   var initials = initialInput.value;
-  localStorage.setItem("highscore", initials + " - " + seconds);
+  // Value that will later be used to apply the 
+  var scoreList = initials + " - " + seconds
+  scoreArray.push(scoreList);
+
+  // runs the displayScore function
+  displayScore();
 
 });
 
+var backButton = document.querySelector("#back");
+
+backButton.addEventListener("click", function (event) {
+  document.getElementById("high-score").style.display = "none";
+  document.getElementById("prompt-container").style.display = "block";
+
+
+});
+
+console.log(scoreArray);
+
+function displayScore() {
+  var scoreList = document.getElementById("score-list");
+
+  scoreList.innerHTML = "";
+
+  scoreArray.forEach(function (score) {
+    var listScores = document.createElement("li");
+    listScores.textContent = score;
+    scoreList.appendChild(listScores);
+  });
+}
+
+var viewScoreButton = document.querySelector("#view-score");
+
+viewScoreButton.addEventListener("click", function (event) {
+  document.getElementById("prompt-container").style.display = "none";
+  document.getElementById("high-score").style.display = "block";
+
+});
