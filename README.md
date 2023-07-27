@@ -1,6 +1,6 @@
 ## Wayne Charrette JavaScript Quiz
 
-Hopefully this name is original enough. I pulled the answers from the instructional gif we were given. 
+Hopefully this name is original enough. I pulled the answers from the instructional gif we were given. The only thing I didn't include was the ability to clear the high scores since it wasn't required the criteria to do so.
 
 # Version History
 
@@ -14,6 +14,7 @@ Hopefully this name is original enough. I pulled the answers from the instructio
 - "added an endQuiz() function when timer hits 0" - added an additional caveat that ends the game when the timer hits 0 
 - "added remaining buttons, fixed timer error, added log for high scores" - kind of a big update. added a bunch of function buttons such as submit score, back button, and view high scores. Updated a small amount of css. Added in the scoreArray to log scores and append it to a list. 
 - "updated README" - quick changes to the README. Need to add an image folder for images. 
+- "CSS changes, added images" - made some changes to the CSS. Added images to the png. 
 
 ## Resources 
 
@@ -26,3 +27,8 @@ Hopefully this name is original enough. I pulled the answers from the instructio
 https://waynecharr.github.io/Javascript_Quiz/
 
 # Images
+
+<img src=assets/images/starting_prompt.PNG>
+<img src=assets/images/question_prompt.PNG>
+<img src=assets/images/score_submission.PNG>
+<img src=assets/images/high_scores.PNG>
