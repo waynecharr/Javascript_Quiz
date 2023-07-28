@@ -148,8 +148,10 @@ submitButton.addEventListener("click", function (event) {
 
 });
 
+// calls the "Back" button
 var backButton = document.querySelector("#back");
 
+// Upon hitting the "Back" button. The "High-score" container is disspears and the "prompt" container is displayed.
 backButton.addEventListener("click", function (event) {
   document.getElementById("high-score").style.display = "none";
   document.getElementById("prompt-container").style.display = "block";
@@ -157,13 +159,16 @@ backButton.addEventListener("click", function (event) {
 
 });
 
+// calls up the score array to show what values are currently available. I initially fooled around with using local storage, but ended up going with a simpler array instead.
 console.log(scoreArray);
 
+// function which calls the display score.
 function displayScore() {
+  // Pulls the "score-list" which is an empty <ul>
   var scoreList = document.getElementById("score-list");
-
+  // Sets the scoreslist to a blank value.
   scoreList.innerHTML = "";
-
+  // forEach function takes the "score-list" <ul> and appends it to the <ul> as a new <li>.
   scoreArray.forEach(function (score) {
     var listScores = document.createElement("li");
     listScores.textContent = score;
@@ -171,8 +176,10 @@ function displayScore() {
   });
 }
 
+// "view-score" container is actually a button. 
 var viewScoreButton = document.querySelector("#view-score");
 
+// on click, sets the "prompt-container" to not display and displays the "high-score" container
 viewScoreButton.addEventListener("click", function (event) {
   document.getElementById("prompt-container").style.display = "none";
   document.getElementById("high-score").style.display = "block";

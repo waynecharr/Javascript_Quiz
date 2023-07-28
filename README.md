@@ -1,6 +1,6 @@
 ## Wayne Charrette JavaScript Quiz
 
-Hopefully this name is original enough. I pulled the answers from the instructional gif we were given. The only thing I didn't include was the ability to clear the high scores since it wasn't required the criteria to do so.
+Hopefully this name is original enough. I pulled the answers from the instructional gif we were given. The only thing I didn't include was the ability to clear the high scores since it wasn't required the criteria to do so. I do have a "highscore.html" that I ended up not using but is still in the document. I wasn't sure if deleting it would cause errors in the github so I ended up leaving it. 
 
 # Version History
 
@@ -15,6 +15,7 @@ Hopefully this name is original enough. I pulled the answers from the instructio
 - "added remaining buttons, fixed timer error, added log for high scores" - kind of a big update. added a bunch of function buttons such as submit score, back button, and view high scores. Updated a small amount of css. Added in the scoreArray to log scores and append it to a list. 
 - "updated README" - quick changes to the README. Need to add an image folder for images. 
 - "CSS changes, added images" - made some changes to the CSS. Added images to the png. 
+- "Added notes in the index and js files" - just some quick extra notes to explain my tought process. 
 
 ## Resources 
 

@@ -18,7 +18,7 @@
     </header>
 
     <main>
-
+        <!--This is the primary prompt container which is what users will see when they first open the document. When start Quiz is clicked the "quiz-container shows up. High scores will display the "High score" container.-->
         <section class="container">
             <div id="prompt-container">
                 <h1>Coding Quiz Challenge</h1>
@@ -27,7 +27,7 @@
                 <button onclick="startQuiz()">Start Quiz</button>
             </div>
 
-
+            <!--This contains the main quiz itself with the four prompt and the questions which are populated by the prompts array.  -->
             <div id="quiz-container" style="display: none;">
                 <p id="question"></p>
                 <button onclick="Answer(0)" class="prompt-choice" id="choice1"></button><br>
@@ -36,16 +36,16 @@
                 <button onclick="Answer(3)" class="prompt-choice" id="choice4"></button><br>
                 <p id="check-answer"></p>
             </div>
-
+            <!--Is displayed automatically once there are no more questions within the prompt. After one enters their initials, they can hit submit which brings up the "high-score array."-->
             <div id="final-score" style="display: none;">
                 <h1>All done!</h1>
                 <p class="score-result"></p>
                 <div class="initials-container"></div>
                 <label for="initials">Enter initials: </label>
-                <input type="text" maxlength="3" minlength="2" id="initials"/>
+                <input type="text" maxlength="3" minlength="2" id="initials" />
                 <button id="submit" class="submit">Submit</button>
             </div>
-
+            <!--This is the high score array which is populated by the scoreArray array. When "Back" is clicked it take the user back to the main prompt.-->
             <div id="high-score" style="display: none;">
                 <h1>High Scores:</h1>
                 <ul id="score-list"></ul>

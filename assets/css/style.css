@@ -21,6 +21,7 @@ p {
     font-size: 20px;
 }
 
+/*Sets the button color and padding*/
 button {
     background-color: var(--purple);
     color: white;
@@ -48,16 +49,19 @@ button.high-score {
     padding: 0%;
 } 
 
+/*Sets the button hovers for much of the document and padding*/
 button.high-score:hover {
     background-color: white;
     color: var(--lavender);
 }
 
+/*Makes the prompt-choice button larger*/
 button.prompt-choice {
     font-size: 24px;
     margin: 1%;
 }
 
+/*Adds some margins and a slightly larger font size*/
 button.submit {
     font-size: 20px;
     padding-left: 2%;
@@ -75,6 +79,7 @@ button.back {
     padding-bottom: 1%;
 }
 
+/*The following ul and li are used just for the "view-scores" container. */
 ul {
     list-style-type: none;
 }
@@ -85,6 +90,7 @@ li {
     font-size: 24px;
 }
 
+/*Used just for inputting scores.*/
 label {
     font-size: 20px;
 }
